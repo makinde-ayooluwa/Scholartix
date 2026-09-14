@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { useState } from "react"
 
 export default function Login({ setAuth }) {
+    const [data, setData] = useState({});
     return <>
         <div className="p-5">
             <h1 className="text-blue-500 font-medium my-3" style={{ fontSize: 30 }}>
@@ -9,11 +10,21 @@ export default function Login({ setAuth }) {
             <div className="grid gap-3 w-full">
                 <div className="grid w-full justify-start">
                     <p>NaviSchool ID</p>
-                    <input className="border w-100 p-2 rounded-[7px] outline-blue-500" type="text" name="" id="" />
+                    <input
+                        value={data?.id}
+                        onInput={
+                            (e) => setData({ ...data, id: e.target.value })
+                        }
+                        className="border w-100 p-2 rounded-[7px] outline-blue-500" type="text" name="" id="" />
                 </div>
                 <div className="grid w-full justify-start">
                     <p>Password</p>
-                    <input className="border w-100 p-2 rounded-[7px] outline-blue-500" type="password" name="" id="" />
+                    <input
+                        value={data?.password}
+                        onInput={
+                            (e) => setData({ ...data, password: e.target.value })
+                        }
+                        className="border w-100 p-2 rounded-[7px] outline-blue-500" type="password" name="" id="" />
                 </div>
                 <div className="flex justify-end">
                     <div className="font-medium cursor-pointer" style={{ fontSize: 12 }} onClick={() => setAuth("forgot-password")}>

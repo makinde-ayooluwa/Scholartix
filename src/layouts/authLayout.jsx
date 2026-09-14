@@ -2,6 +2,7 @@
 import { useState } from "react"
 import AuthImage from "../assets/images/boy-holding-book.png"
 import Login from "../pages/login"
+import Register from "../pages/register";
 export default function AuthLayout() {
     const [auth, setAuth] = useState("login");
     return (
@@ -12,8 +13,8 @@ export default function AuthLayout() {
                 </div>
                 <div className="flex align-middle justify-center">
                     {auth == "login" && <Login setAuth={setAuth} />}
-                    {auth == "register" && <h1>Register</h1>}
-                    {auth == "forgot-password" && <h1>Forgot password</h1>}
+                    {auth == "register" && <Register setAuth={setAuth} />}
+                    {auth == "forgot-password" && <ForgotPassword setAuth={setAuth} />}
                 </div>
             </div>
         </>
