@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Login({ setAuth }) {
     return <>
         <div className="p-5">
-            <h1 className="text-blue-500 font-medium" style={{ fontSize: 30 }}>
+            <h1 className="text-blue-500 font-medium my-3" style={{ fontSize: 30 }}>
                 Login to your account
             </h1>
             <div className="grid gap-3 w-full">
